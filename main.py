@@ -1,63 +1,33 @@
 import argparse
-import os
-import re
-import random
 import torch
 import clip
-from tqdm import tqdm
+from diffusers import StableDiffusionXLPipeline, EDMEulerScheduler, AutoencoderKL
+from clip_feature import CLIPFeatureExtractor
+from similarity_check import SimilarityChecker
+from model import CosXL
+from prompts import PromptsNegPos
+from diffcoreMix import DiffCoreMix
+
+class DataAugmentation:
+    def __init__(self, args):
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.vae = AutoencoderKL.from_pretrained("stabilityai/sd-vae-ft-ema").to(self.device)
+        self.extractor = CLIPFeatureExtractor(self.device)
+        self.similarity_checker = SimilarityChecker()
+        self.generator = CosXL(args.cosxl_model_path, self.vae)
+        self.prompt_manager = PromptsNegPos()
+        self.augmentor = DiffCoreMix(self.extractor, self.similarity_checker, self.generator, self.prompt_manager, args.dataset)
+
+    def run(self, output_folder, augment_percentage):
+        self.augmentor.augment_images(output_folder, augment_percentage)
 
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Stable Diffusion Image Augmentation")
+    parser.add_argument("--dataset", type=str, required=True)
+    parser.add_argument("--output_folder", type=str, required=True)
+    parser.add_argument("--augment_percentage", type=float, default=0.3)
+    parser.add_argument("--cosxl_model_path", type=str, required=True, help="Path to the CosXL model file")
+    args = parser.parse_args()
 
-class DiffCoreMix:
-    def __init__(self, extractor, similarity_checker, generator, prompt_manager, dataset_name, similarity_threshold=0.6):
-        self.extractor = extractor
-        self.similarity_checker = similarity_checker
-        self.generator = generator
-        self.prompt_manager = prompt_manager
-        self.dataset_name = dataset_name
-        self.similarity_threshold = similarity_threshold
-
-    @staticmethod
-    def clean_label_name(class_name):
-        return re.sub(r'^\d+\.', '', class_name).strip()
-
-    def augment_folder(self, folder, augment_percentage, log_file):
-        processed_images = 0
-        discarded_images = 0
-
-        class_names = [cls for cls in os.listdir(folder) if os.path.isdir(os.path.join(folder, cls))]
-
-        for class_name in class_names:
-            class_path = os.path.join(folder, class_name)
-            image_files = [f for f in os.listdir(class_path) if f.lower().endswith((".png", ".jpg", ".jpeg"))]
-
-            num_to_generate = int(len(image_files) * augment_percentage)
-            clean_class_name = self.clean_label_name(class_name)
-
-            for idx in tqdm(range(num_to_generate), desc=f"Generating {class_name}"):
-                prompt = self.prompt_manager.get_random_prompt(clean_class_name, self.dataset_name)
-                generated_image = self.generator.generate_image(
-                    prompt=prompt,
-                    negative_prompt=self.prompt_manager.negative_prompt,
-                    guidance_scale=7.5,
-                    steps=50,
-                    height=512,
-                    width=512
-                )
-
-                original_image_path = os.path.join(class_path, random.choice(image_files))
-                original_features = self.extractor.extract_features(original_image_path)
-
-                generated_image.save("temp.png")
-                generated_features = self.extractor.extract_features("temp.png")
-
-                similarity = self.similarity_checker.cosine_similarity(original_features, generated_features)
-                if similarity >= self.similarity_threshold:
-                    output_image_name = f"{class_name}_gen_{processed_images}.png"
-                    generated_image.save(os.path.join(class_path, output_image_name))
-                    processed_images += 1
-                else:
-                    discarded_images += 1
-                os.remove("temp.png")
-
-        return processed_images, discarded_images
+    pipeline = DataAugmentation(args)
