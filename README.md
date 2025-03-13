@@ -3,36 +3,30 @@
     <img src="assets/placeholder.png" alt="DiffCoRe-Mix Overview">
 </p>
 
-#### [Khawar Islam](mailto:khawar.islam@student.unimelb.edu.au), [Naveed Akhtar](mailto:naveed.akhtar1@unimelb.edu.au)
-#### **School of Computing and Information Systems, The University of Melbourne**
-
 <p align="center">
   <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Paper-ICLR2025-blue" alt="Paper"></a>&nbsp;&nbsp;
   <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Code-GitHub-brightgreen" alt="Code"></a>&nbsp;&nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellowgreen" alt="License"></a>
 </p>
 
+#### [Khawar Islam](mailto:khawar.islam@student.unimelb.edu.au), [Naveed Akhtar](mailto:naveed.akhtar1@unimelb.edu.au)
+#### **School of Computing and Information Systems, The University of Melbourne**
+
 
 ## 📢 Latest Updates
 - **Mar-15-25**: Public release of the code and models.
-- **Mar-10-25**: Paper accepted at **ICLR-2025**.
+- **Mar-10-25**: Paper accepted at **ICLRw-2025**.
 - **Mar-01-25**: Preprint is available.
 
 ---
 
-## <img src="images/logo_diffcoremix.png" height="40"> Overview
 
-**DiffCoRe-Mix** is a novel data augmentation approach that leverages text-to-image (T2I) diffusion models to generate semantically aligned augmentation samples. By combining contextual and negative prompts with a hard cosine similarity filtration in the CLIP feature space, DiffCoRe-Mix ensures that only high-quality generative images are mixed with real data. This robust augmentation strategy has been shown to improve model generalization on both general and fine-grained classification tasks.
+### Key Features
 
-**Key Features:**
 - **Contextual & Negative Prompting:** Guides the diffusion process to generate domain-specific images while suppressing undesired content.
 - **Hard Cosine Similarity Filtration:** Uses CLIP embeddings to filter out generated samples that do not meet semantic alignment criteria.
 - **Composite Image Mixing:** Combines real and generative images using both pixel-wise and patch-wise strategies.
 
-For visual insights, refer to:
-- **Figure 2:** Overview of DiffCoRe-Mix data augmentation method.
-- **Figure 8:** Computational cost analysis on Flowers102 and Stanford Cars datasets.
-- **Figure 15:** Training batch visualization of DiffCoRe-Mix.
 
 ---
 
