@@ -19,7 +19,7 @@ def main():
     vae = AutoencoderKL.from_pretrained("madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16)
 
     # Path to the diffusion model file (update with the actual path)
-    generate_file = "/media/cvpr/CM_1/ResMix/model/cosxl.safetensors"
+    generate_file = "cosxl.safetensors"
 
     # Initialize the DiffusionGenerator
     diffusion_generator = CosXL(generate_file, vae, device="cuda")
