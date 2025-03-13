@@ -38,7 +38,7 @@ cd DiffCoRe-Mix
 
 2. Install Package
 ```Shell
-conda create -n DiffCoreMix python=3.10 -y
+conda create -n DiffCoreMix python=3.9.19 -y
 conda activate DiffCoreMix
 ```
 
