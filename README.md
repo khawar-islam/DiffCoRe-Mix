@@ -13,7 +13,7 @@
 #### **School of Computing and Information Systems, The University of Melbourne**
 
 
-## 📢 Latest Updates
+### 📢 Latest Updates
 - **Mar-15-25**: Public release of the code and models.
 - **Mar-10-25**: Paper accepted at **ICLRw-2025**.
 - **Mar-01-25**: Preprint is available.
