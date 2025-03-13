@@ -1,18 +1,17 @@
-# DiffCoRe-Mix <img src="images/logo_diffcoremix.png" height="40">: Context-Guided Responsible Data Augmentation with Diffusion Models [ICLR-2025]
+# DiffCoRe-Mix : Context-Guided Responsible Data Augmentation with Diffusion Models [ICLR-2025]
 <p align="center">
-    <img src="https://i.imgur.com/your_placeholder.png" alt="DiffCoRe-Mix Overview">
+    <img src="assets/placeholder.png" alt="DiffCoRe-Mix Overview">
 </p>
 
-#### [Khawar Islam](mailto:khawar.islam@student.unimelb.edu.au)\*, [Naveed Akhtar](mailto:naveed.akhtar1@unimelb.edu.au)
-
-
+#### [Khawar Islam](mailto:khawar.islam@student.unimelb.edu.au), [Naveed Akhtar](mailto:naveed.akhtar1@unimelb.edu.au)
 #### **School of Computing and Information Systems, The University of Melbourne**
 
-[![Paper](https://img.shields.io/badge/Paper-ICLR2025-blue)](https://github.com/your_repo_link)  
-[![Code](https://img.shields.io/badge/Code-GitHub-brightgreen)](https://github.com/your_repo_link)  
-[![License](https://img.shields.io/badge/License-MIT-yellowgreen)](LICENSE)
+<p align="center">
+  <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Paper-ICLR2025-blue" alt="Paper"></a>&nbsp;&nbsp;
+  <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Code-GitHub-brightgreen" alt="Code"></a>&nbsp;&nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellowgreen" alt="License"></a>
+</p>
 
----
 
 ## 📢 Latest Updates
 - **Mar-15-25**: Public release of the code and models.
