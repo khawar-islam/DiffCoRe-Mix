@@ -1,4 +1,4 @@
-# DiffCoRe-Mix : Context-Guided Responsible Data Augmentation with Diffusion Models [ICLR-2025]
+# DiffCoRe-Mix : Context-Guided Responsible Data Augmentation with Diffusion Models [ICLRw-2025]
 <p align="center">
     <img src="assets/placeholder.png" alt="DiffCoRe-Mix Overview">
 </p>
