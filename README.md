@@ -56,11 +56,14 @@ python main.py --dataset <DATASET_NAME> --output_folder <PATH_TO_OUTPUT_FOLDER> 
 ```
 python main.py --dataset cub200 --output_folder /path/to/cub200/train --aug_per 0.3
 ```
+---
 
 ## Examples
 <p align="center">
     <img src="assets/diversity.jpg" alt="DiffCoRe-Mix Overview">
 </p>
+
+---
 
 ## Citation
 
