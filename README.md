@@ -27,26 +27,45 @@
 - **Hard Cosine Similarity Filtration:** Uses CLIP embeddings to filter out generated samples that do not meet semantic alignment criteria.
 - **Composite Image Mixing:** Combines real and generative images using both pixel-wise and patch-wise strategies.
 
-
 ---
 
-## Contents
-- [1. Install](#1-install)
-  - [1.1 Clone the Repository](#11-clone-the-repository)
-  - [1.2 Create and Activate a Conda Environment](#12-create-and-activate-a-conda-environment)
-  - [1.3 Install Dependencies](#13-install-dependencies)
-- [2. Usage](#2-usage)
-- [3. Train](#3-train)
-- [4. Evaluation](#4-evaluation)
-- [5. Repository Structure](#5-repository-structure)
-- [6. Citation](#6-citation)
-- [7. Acknowledgements](#7-acknowledgements)
-
----
-
-## 1. Install
-
-### 1.1 Clone the Repository
+## Install
+1. Clone this repository and navigate to DiffCoRe-Mix folder
 ```bash
 git clone https://github.com/your_username/DiffCoRe-Mix.git
 cd DiffCoRe-Mix
+```
+
+2. Install Package
+```Shell
+conda create -n DiffCoreMix python=3.10 -y
+conda activate DiffCoreMix
+```
+
+3. Download pre-trained CosXL model
+```
+https://huggingface.co/cocktailpeanut/c/blob/main/cosxl.safetensors
+```
+
+4. To run the augmentation process, use:
+```
+python main.py --dataset <DATASET_NAME> --output_folder <PATH_TO_OUTPUT_FOLDER> --aug_per <AUGMENTATION_PERCENTAGE>
+```
+
+5. To augment the CUB200 dataset with 30% augmentation
+```
+python main.py --dataset cub200 --output_folder /path/to/cub200/train --aug_per 0.3
+```
+
+
+## Citation
+
+If you use DiffCoRe-Mix in your research, please cite our paper:
+```
+@inproceedings{islam2025diffcoremix,
+  title={Context-Guided Responsible Data Augmentation with Diffusion Models},
+  author={Islam, Khawar and Akhtar, Naveed},
+  booktitle={DPFM Workshop, ICLR 2025},
+  year={2025}
+}
+```
