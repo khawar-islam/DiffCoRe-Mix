@@ -52,11 +52,16 @@ https://huggingface.co/cocktailpeanut/c/blob/main/cosxl.safetensors
 python main.py --dataset <DATASET_NAME> --output_folder <PATH_TO_OUTPUT_FOLDER> --aug_per <AUGMENTATION_PERCENTAGE>
 ```
 
-5. To augment the CUB200 dataset with 30% augmentation
+5. For instance, to augment the CUB200 dataset with 30% augmentation
 ```
 python main.py --dataset cub200 --output_folder /path/to/cub200/train --aug_per 0.3
 ```
 
+## Visual examples 
+
+<p align="center">
+    <img src="assets/diversity.jpg" alt="DiffCoRe-Mix Overview">
+</p>
 
 ## Citation
 
