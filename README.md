@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Paper-ICLR2025-blue" alt="Paper"></a>&nbsp;&nbsp;
-  <a href="https://github.com/your_repo_link"><img src="https://img.shields.io/badge/Code-GitHub-brightgreen" alt="Code"></a>&nbsp;&nbsp;
+  <a href="https://arxiv.org/pdf/2503.10687"><img src="https://img.shields.io/badge/Paper-ICLR2025-blue" alt="arXiV"></a>&nbsp;&nbsp;
+  <a href="https://github.com/khawar-islam/DiffCoRe-Mix"><img src="https://img.shields.io/badge/Code-GitHub-brightgreen" alt="Code"></a>&nbsp;&nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellowgreen" alt="License"></a>
 </p>
 
