@@ -14,9 +14,10 @@
 
 
 ### 📢 Latest Updates
-- **Mar-15-25**: Public release of the code and models.
-- **Mar-10-25**: Paper accepted at **ICLRw-2025**.
-- **Mar-01-25**: Preprint is available.
+- **Mar-15-25**: Preprint is available.
+- **Mar-13-25**: Public release of the code and models.
+- **Mar-12-25**: Paper accepted at **ICLRw-2025**.
+
 
 ---
 
