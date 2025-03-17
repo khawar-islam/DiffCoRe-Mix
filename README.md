@@ -33,7 +33,7 @@
 ## Install
 1. Clone this repository and navigate to DiffCoRe-Mix folder
 ```bash
-git clone https://github.com/your_username/DiffCoRe-Mix.git
+git clone https://github.com/khawar-islam/DiffCoRe-Mix.git
 cd DiffCoRe-Mix
 ```
 
