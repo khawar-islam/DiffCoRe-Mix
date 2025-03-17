@@ -70,10 +70,9 @@ python main.py --dataset cub200 --output_folder /path/to/cub200/train --aug_per 
 
 If you use DiffCoRe-Mix in your research, please cite our paper:
 ```
-@inproceedings{islam2025diffcoremix,
+@inproceedings{islam2025context,
   title={Context-Guided Responsible Data Augmentation with Diffusion Models},
-  author={Islam, Khawar and Akhtar, Naveed},
-  booktitle={DPFM Workshop, ICLR 2025},
-  year={2025}
+  author={Islam, Khawar and AKHTAR, NAVEED},
+  booktitle={ICLR 2025 Workshop on Navigating and Addressing Data Problems for Foundation Models}
 }
 ```
